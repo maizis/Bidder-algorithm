@@ -1,11 +1,11 @@
 const item = [
   {
-    name: 'Item 1',
-    price: 100,
+    name: 'Voiture',
+    price: 300,
     bids: [
       {
         name: 'Alice',
-        bid: 200
+        bid: 100
       },
       {
         name: 'Jean',
@@ -13,41 +13,18 @@ const item = [
       },
       {
         name: 'Clément',
-        bid: 800
+        bid: 200
       },
       {
         name: 'Alice',
-        bid: 100
+        bid: 201
+      },
+      {
+        name: 'Etienne',
+        bid: 103
       }
     ]
   },
-  // {
-  //   name: 'Item 2',
-  //   price: 200,
-  //   bids: []
-  // },
-  // {
-  //   name: 'Item 3',
-  //   price: 300,
-  //   bids: [
-  //     {
-  //       name: 'Alice',
-  //       bid: 280
-  //     },
-  //     {
-  //       name: 'Jean',
-  //       bid: 305
-  //     },
-  //     {
-  //       name: 'Clément',
-  //       bid: 350
-  //     },
-  //     {
-  //       name: 'Alice',
-  //       bid: 330
-  //     }
-  //   ]
-  // }
 ]
 
-module.exports = items;
+module.exports = item;
