@@ -1,6 +1,6 @@
 const item = [
   {
-    name: 'Item 1',
+    name: 'Voiture',
     price: 100,
     bids: [
       {
@@ -50,4 +50,4 @@ const item = [
   // }
 ]
 
-module.exports = items;
+module.exports = item;
