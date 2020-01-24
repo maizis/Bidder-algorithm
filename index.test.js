@@ -1,46 +1,54 @@
 const {
-  itemName, itemPrice, bidList, bidWin, bidderWin, priceWin
+  itemName,
+  itemPrice,
+  bidList,
+  bidMax,
+  bidderWin,
+  priceWin,
 } = require('./index');
+
 const item = require('./data/items');
 
-test('itemName', () => {
+//J'ai concaténé les f() dans le test pour afficher dans la console les résultats proprement.
+
+test('Nom du produit : ' + itemName(item), () => {
   expect(
     itemName(item)
   ).toBe('Voiture');},
 );
 
-test('itemPrice', () => {
+test('Prix de reserve du produit : ' + itemPrice(item), () => {
   expect(
     itemPrice(item)
-  ).toBe(100);
+  ).toBe(300);
 },
 );
 
-test('bidList', () => {
+test('Liste des bids envoyés : ' + bidList(item), () => {
   expect(
     bidList(item)
-  ).toMatchObject([200, 901, 800, 100]);
+  ).toMatchObject([200, 901, 800, 100, 803]);
 },
 );
 
-test('bidWin', () => {
+test('Bid le plus haut : ' + bidMax(item), () => {
   expect(
-    bidWin(item)
+    bidMax(item)
   ).toBe(901);
 },
 );
 
-test('bidderWin', () => {
+test('Bidder gagnant : ' + bidderWin(item), () => {
   expect(
     bidderWin(item)
   ).toBe('Jean');
 },
 );
 
-test('priceWin', () => {
+test('Prix gagnant : ' + priceWin(item), () => {
   expect(
     priceWin(item)
-  ).toBe(800);
+  ).toBe(803);
 },
 );
 

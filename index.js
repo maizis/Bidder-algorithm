@@ -1,3 +1,5 @@
+const item = require('./data/items');
+
 //Nom du produit qui est vendu.
 function itemName (a) {
   return a[0].name
@@ -8,7 +10,6 @@ function itemPrice (a) {
   return a[0].price
 }
 
-
 //Listes des bids qui ont été envoyé pour ce produit.
 function bidList (a) {
   return bids = a[0].bids.map((b) => {
@@ -17,7 +18,7 @@ function bidList (a) {
 }
 
 //Le plus haut bid envoyé pour ce produit.
-function bidWin (a) {
+function bidMax (a) {
   return Math.max(...a[0].bids.map((b) => { return b.bid }))
 }
 
@@ -49,7 +50,7 @@ module.exports = {
   itemName,
   itemPrice,
   bidList,
-  bidWin,
+  bidMax,
   bidderWin,
   priceWin,
 }
