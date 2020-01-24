@@ -1,5 +1,3 @@
-const item = require('./data/items');
-
 //Nom du produit qui est vendu.
 function itemName (a) {
   return a[0].name
