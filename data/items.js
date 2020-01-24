@@ -5,7 +5,7 @@ const item = [
     bids: [
       {
         name: 'Alice',
-        bid: 200
+        bid: 100
       },
       {
         name: 'Jean',
@@ -13,15 +13,15 @@ const item = [
       },
       {
         name: 'Clément',
-        bid: 800
+        bid: 200
       },
       {
         name: 'Alice',
-        bid: 100
+        bid: 201
       },
       {
         name: 'Etienne',
-        bid: 803
+        bid: 103
       }
     ]
   },

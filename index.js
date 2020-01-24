@@ -1,3 +1,5 @@
+const t0 = performance.now();
+
 //Nom du produit qui est vendu.
 function itemName (a) {
   return a[0].name
@@ -33,8 +35,10 @@ function bidderWin (a) {
 //Si sup au prix du produit, le prix gagnant correspondant au bid le plus haut envoyé par un non-gagnant.
 //Filtrer sur le nom afin de pouvoir retiré tout les bids du gagnant et pas que le bid gagnant.
 function priceWin (a) {
- const bidderList = a[0].bids.map((b) => ({ name: b.name, bid : b.bid}))
- const bidderWin = bidderList.filter((b) => { 
+ const bidderList = a[0].bids.map((b) => ({ 
+   name: b.name, bid : b.bid
+  }))
+  const bidderWin = bidderList.filter((b) => { 
    return b.bid === (Math.max(...a[0].bids.map((b) =>
      { return b.bid }
      )))
@@ -44,6 +48,9 @@ function priceWin (a) {
  return winPrice > a[0].price ? winPrice : a[0].price
 }
 
+const t1 = performance.now();
+console.log('Time execution: ' + (t1 - t0) + 'milliseconds.')
+
 module.exports = {
   itemName,
   itemPrice,
@@ -52,11 +59,3 @@ module.exports = {
   bidderWin,
   priceWin,
 }
-
-
-// Chaque fonction doit retourner le même résultat si les mêmes paramètre son passer (Pure Function)
-// Tu dois teste chaque fonction avec plusieurs cas
-
-// Tester la rapidité de ton algorithme
-
-// https://stackoverflow.com/questions/313893/how-to-measure-time-taken-by-a-function-to-execute

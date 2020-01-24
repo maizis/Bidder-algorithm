@@ -27,7 +27,7 @@ test('Prix de reserve du produit : ' + itemPrice(item), () => {
 test('Liste des bids envoyés : ' + bidList(item), () => {
   expect(
     bidList(item)
-  ).toMatchObject([200, 901, 800, 100, 803]);
+  ).toMatchObject([100, 901, 200, 201, 103]);
 },
 );
 
@@ -48,9 +48,8 @@ test('Bidder gagnant : ' + bidderWin(item), () => {
 test('Prix gagnant : ' + priceWin(item), () => {
   expect(
     priceWin(item)
-  ).toBe(803);
+  ).toBe(300);
 },
 );
-
 
 
