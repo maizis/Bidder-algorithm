@@ -4,31 +4,32 @@ const item = require('./data/items');
 function itemName (name) {
   return name = item[0].name
 }
+console.log('Nom du produit : ' + itemName())
 
 //Prix du produit qui est vendu.
 function itemPrice (price) {
   return price = item[0].price
 }
-console.log(itemPrice())
+console.log('Prix du produit : ' + itemPrice())
 
 //Listes des bids qui ont été envoyé pour ce produit.
 function bidList (bids) {
   return bids = item[0].bids.map((b) => { return b.bid })
 }
-console.log(bidList())
+console.log('Liste des bids envoyés : ' + bidList())
 
 //Le plus haut bid envoyé pour ce produit.
 function bidWin (win) {
   return win = Math.max(...item[0].bids.map((b) => { return b.bid }))
 }
-console.log(bidWin())
+console.log('Montant du bid gagnant : ' + bidWin())
 
 //Le nom du gagnant correspondant au plus haut bid envoyé.
 function bidderWin (win) {
   const bidderList = item[0].bids.map((b) => ({ name: b.name, bid : b.bid}))
   return win = bidderList.filter((b) => { return b.bid === bidWin() })
 }
-console.log(bidderWin())
+console.log('Nom du bidder gagnant : ' + bidderWin())
 
 //Le prix gagnant correspondant au plus haut bid envoyé par un non-gagnant.
 //Si celui-ci est < au prix du produit, le prix gagnant est le prix du produit.
@@ -38,7 +39,7 @@ function priceWin (win) {
  const winPrice = Math.max(...bidderLoose.map((b) => { return b.bid }))
  return win = winPrice > item[0].price ? winPrice : item[0].price
 }
-console.log(priceWin())
+console.log('Montant du bid gagnant : ' + priceWin())
 
 
 // module.exports = bidList;
