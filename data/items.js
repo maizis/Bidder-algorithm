@@ -1,53 +1,24 @@
-const item = [
-  {
-    name: 'Item 1',
-    price: 100,
-    bids: [
-      {
-        name: 'Alice',
-        bid: 200
-      },
-      {
-        name: 'Jean',
-        bid: 901
-      },
-      {
-        name: 'Clément',
-        bid: 800
-      },
-      {
-        name: 'Alice',
-        bid: 100
-      }
-    ]
-  },
-  // {
-  //   name: 'Item 2',
-  //   price: 200,
-  //   bids: []
-  // },
-  // {
-  //   name: 'Item 3',
-  //   price: 300,
-  //   bids: [
-  //     {
-  //       name: 'Alice',
-  //       bid: 280
-  //     },
-  //     {
-  //       name: 'Jean',
-  //       bid: 305
-  //     },
-  //     {
-  //       name: 'Clément',
-  //       bid: 350
-  //     },
-  //     {
-  //       name: 'Alice',
-  //       bid: 330
-  //     }
-  //   ]
-  // }
-]
+const item = {
+  name: "object_sale",
+  reserve_price: 100,
+  bids: [
+    {
+      name: 'Bidder1',
+      bid: 90,
+    },
+    {
+      name: 'Bidder2',
+      bid: 80
+    },
+    {
+      name: 'Bidder3',
+      bid: null,
+    },
+    {
+      name: 'Bidder2',
+      bid: 125
+    },
+  ]
+}
 
-module.exports = items;
+module.exports = item
