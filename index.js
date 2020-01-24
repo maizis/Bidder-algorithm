@@ -18,12 +18,10 @@ function bidList (a) {
 
 //Le plus haut bid envoyé pour ce produit.
 function bidWin (a) {
-  const bidMax = Math.max(...a[0].bids.map((b) => { return b.bid }))
-  return bidMax
+  return Math.max(...a[0].bids.map((b) => { return b.bid }))
 }
 
 //Le nom du gagnant correspondant au plus haut bid envoyé.
-//TEST FAIL.
 function bidderWin (a) {
   const bidderList = a[0].bids.map((b) => ({ name: b.name, bid: b.bid}))
   return bidderList.filter((b) => { 
@@ -37,7 +35,12 @@ function bidderWin (a) {
 //Filtrer sur le nom afin de pouvoir retiré tout les bids du gagnant et pas que le bid gagnant.
 function priceWin (a) {
  const bidderList = a[0].bids.map((b) => ({ name: b.name, bid : b.bid}))
- const bidderLoose = bidderList.filter((b) => { return b.name !== bidderWin() })
+ const bidderWin = bidderList.filter((b) => { 
+   return b.bid === (Math.max(...a[0].bids.map((b) =>
+     { return b.bid }
+     )))
+   })[0].name
+ const bidderLoose = bidderList.filter((b) => { return b.name !== bidderWin })
  const winPrice = Math.max(...bidderLoose.map((b) => { return b.bid }))
  return winPrice > a[0].price ? winPrice : a[0].price
 }
