@@ -21,33 +21,6 @@ const item = [
       }
     ]
   },
-  // {
-  //   name: 'Item 2',
-  //   price: 200,
-  //   bids: []
-  // },
-  // {
-  //   name: 'Item 3',
-  //   price: 300,
-  //   bids: [
-  //     {
-  //       name: 'Alice',
-  //       bid: 280
-  //     },
-  //     {
-  //       name: 'Jean',
-  //       bid: 305
-  //     },
-  //     {
-  //       name: 'Clément',
-  //       bid: 350
-  //     },
-  //     {
-  //       name: 'Alice',
-  //       bid: 330
-  //     }
-  //   ]
-  // }
 ]
 
 module.exports = item;
