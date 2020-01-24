@@ -35,6 +35,7 @@ console.log('Nom du bidder gagnant : ' + bidderWin())
 
 //Le prix gagnant correspondant au plus haut bid envoyé par un non-gagnant.
 //Si celui-ci est < au prix du produit, le prix gagnant est le prix du produit.
+//Filtrer sur le nom afin de pouvoir retiré tout les bids du gagnant et pas que le bid gagnant.
 function priceWin (win) {
  const bidderList = item[0].bids.map((b) => ({ name: b.name, bid : b.bid}))
  const bidderLoose = bidderList.filter((b) => { return b.name !== bidderWin() })
@@ -46,11 +47,11 @@ console.log('Montant du bid gagnant : ' + priceWin())
 
 // module.exports = bidList;
 
-// Récupère un item items.items[0] ou items[0]
+  // Récupère un item items.items[0] ou items[0]
   // Récupérer son prix
   // Parcourir ces enchères
   // (Func) Trouver l'enchère maximum -> Trouver le gagnant (Le nombre le plus haut dans ton tableau)
-    // Ton tableau bids doit retourner un truc du style [100, 200, 300, 400, 500] -> Math.max(...bids) -> Retire du tableau -> Math.max(...Bids) (Vérifier que la valeur sois supérieur au prix de réserve)
+  // Ton tableau bids doit retourner un truc du style [100, 200, 300, 400, 500] -> Math.max(...bids) -> Retire du tableau -> Math.max(...Bids) (Vérifier que la valeur sois supérieur au prix de réserve)
   // (Func) Trouver le prix que l'acheteur payera
 
   //Winprice = remove math.max from bidList
