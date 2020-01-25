@@ -1,6 +1,4 @@
-const {
-  getWinner,
-} = require('./index');
+const { getWinner } = require('./index');
 
 const item = require('./data/items');
 
@@ -16,6 +14,3 @@ test(
     )
   },
 );
-
-
-

@@ -29,7 +29,7 @@ const item = {
     },
     {
       name: 'Bidder2',
-      bid: 80
+      bid: 120
     },
   ]
 ```
