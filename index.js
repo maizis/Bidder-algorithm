@@ -1,61 +1,31 @@
-const t0 = performance.now();
-
-//Nom du produit qui est vendu.
-function itemName (a) {
-  return a[0].name
+// Get the bidder's name of the hightest bid.
+function bidderWin(item) {
+  return item.bids.filter((b) => {
+    return b.bid === Math.max(...item.bids.map((b) => b.bid))
+  })[0].name
 }
 
-//Prix du produit qui est vendu.
-function itemPrice (a) {
-  return a[0].price
-}
-
-//Listes des bids qui ont été envoyé pour ce produit.
-function bidList (a) {
-  return bids = a[0].bids.map((b) => {
-    return b.bid
+// Get the list of non-winning bidders
+function bidderLoose(item) {
+  return item.bids.filter((b) => {
+    return b.name !== bidderWin(item)
   })
 }
 
-//Le plus haut bid envoyé pour ce produit.
-function bidMax (a) {
-  return Math.max(...a[0].bids.map((b) => { return b.bid }))
+// Get the highest bid from non-winning bidders.
+function priceWin(item) {
+  const maxPrice = Math.max(...bidderLoose(item).map((b) => b.bid))
+  return maxPrice > item.reserve_price ? maxPrice : item.reserve_price
 }
 
-//Le nom du gagnant correspondant au plus haut bid envoyé.
-function bidderWin (a) {
-  const bidderList = a[0].bids.map((b) => ({ name: b.name, bid: b.bid}))
-  return bidderList.filter((b) => { 
-    return b.bid === (Math.max(...a[0].bids.map((b) =>
-      { return b.bid }
-      )))
-    })[0].name
+// Return the winner and the price.
+function getWinner(item) {
+  return {
+    "Name": bidderWin(item),
+    "Price": priceWin(item),
+  }
 }
-
-//Si sup au prix du produit, le prix gagnant correspondant au bid le plus haut envoyé par un non-gagnant.
-//Filtrer sur le nom afin de pouvoir retiré tout les bids du gagnant et pas que le bid gagnant.
-function priceWin (a) {
- const bidderList = a[0].bids.map((b) => ({ 
-   name: b.name, bid : b.bid
-  }))
-  const bidderWin = bidderList.filter((b) => { 
-   return b.bid === (Math.max(...a[0].bids.map((b) =>
-     { return b.bid }
-     )))
-   })[0].name
- const bidderLoose = bidderList.filter((b) => { return b.name !== bidderWin })
- const winPrice = Math.max(...bidderLoose.map((b) => { return b.bid }))
- return winPrice > a[0].price ? winPrice : a[0].price
-}
-
-const t1 = performance.now();
-console.log('Time execution: ' + (t1 - t0) + 'milliseconds.')
-
 module.exports = {
-  itemName,
-  itemPrice,
-  bidList,
-  bidMax,
-  bidderWin,
-  priceWin,
+  getWinner,
 }
+

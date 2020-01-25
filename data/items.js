@@ -1,30 +1,25 @@
-const item = [
-  {
-    name: 'Voiture',
-    price: 300,
-    bids: [
-      {
-        name: 'Alice',
-        bid: 100
-      },
-      {
-        name: 'Jean',
-        bid: 901
-      },
-      {
-        name: 'Clément',
-        bid: 200
-      },
-      {
-        name: 'Alice',
-        bid: 201
-      },
-      {
-        name: 'Etienne',
-        bid: 103
-      }
-    ]
-  },
-]
+const item = {
+  name: "object_sale",
+  reserve_price: 100,
+  bids: [
+    {
+      name: 'Bidder1',
+      bid: 90,
+    },
+    {
+      name: 'Bidder2',
+      bid: 80
+    },
+    {
+      name: 'Bidder3',
+      bid: null,
+    },
+    {
+      name: 'Bidder2',
+      bid: 125
+    },
+  ]
+}
 
-module.exports = item;
+module.exports = item
+
