@@ -28,3 +28,4 @@ function getWinner(item) {
 module.exports = {
   getWinner,
 }
+
