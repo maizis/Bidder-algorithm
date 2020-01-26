@@ -25,6 +25,4 @@ function getWinner(item) {
     "Price": priceWin(item),
   }
 }
-module.exports = {
-  getWinner,
-}
+module.exports = { getWinner }
