@@ -48,7 +48,7 @@ function getWinner(item) {
 ```
 
 ### Test (made with https://jestjs.io/)
-Insert the expect result in test()
+Insert the expect result in test() and yarn test
 
 ```
 item.test.js
