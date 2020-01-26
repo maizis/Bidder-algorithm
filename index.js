@@ -14,8 +14,8 @@ function bidderLoose(item) {
 
 // Get the highest bid from non-winning bidders.
 function priceWin(item) {
-  const maxPrice = Math.max(...bidderLoose(item).map((b) => b.bid))
-  return maxPrice > item.reserve_price ? maxPrice : item.reserve_price
+  const price = Math.max(...bidderLoose(item).map((b) => b.bid))
+  return price > item.reserve_price ? price : item.reserve_price
 }
 
 // Return the winner and the price.
@@ -25,4 +25,5 @@ function getWinner(item) {
     "Price": priceWin(item),
   }
 }
+
 module.exports = { getWinner }
