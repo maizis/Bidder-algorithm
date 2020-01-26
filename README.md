@@ -34,6 +34,19 @@ const item = {
   ]
 ```
 
+### algorithm
+
+```
+index.js
+
+function getWinner(item) {
+  return {
+    "Name": bidderWin(item),
+    "Price": priceWin(item),
+  }
+}
+```
+
 ### Test (made with https://jestjs.io/)
 Insert the expect result in test()
 
