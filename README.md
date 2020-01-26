@@ -17,7 +17,7 @@ yarn test
 Configure your item like the following example.
 
 ```
-items.js
+data/items.js
 
 const item = {
   name: "object_sale",
