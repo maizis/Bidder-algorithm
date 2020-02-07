@@ -1,4 +1,4 @@
-# Teads development test
+# development test
 Let's consider a second-price, sealed-bid auction.
 
 Implementation of an anglorithm for finding the winner and the winner price.
